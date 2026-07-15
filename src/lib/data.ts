@@ -1,3 +1,10 @@
+export const weeklyPrograms = [
+  { day: "Sunday Fellowship", time: "4:00 PM" },
+  { day: "Monday Prayer Night", time: "7:00 PM" },
+  { day: "Tuesday Bible Study", time: "4:00 PM" },
+  { day: "Thursday Bible Study", time: "4:00 PM" },
+];
+
 export const event = {
   fellowship: "Scripture Union Campus Fellowship",
   institute: "Metallurgical Training Institute, Onitsha",
@@ -171,24 +178,24 @@ export const alumniDirectory: AlumniSet[] = [
   },
   {
     set: "1999/2000",
-    label: "Second Set",
+    label: "2nd Set",
     members: [
       { name: "Engr. Nwokeukwu Solomon", contact: "08037379948", location: "Kaduna State" },
     ],
   },
   {
     set: "2000/2001",
-    label: "Third Set",
+    label: "3rd Set",
     members: [{ name: "Engr. Chigbo Nwafor", contact: "08067242692", location: "Abuja" }],
   },
   {
     set: "2001/2002",
-    label: "Fourth Set",
+    label: "4th Set",
     members: [{ name: "Engr. Ezenwafor Christian C.", contact: "08064079383", location: "Awka" }],
   },
   {
     set: "2002/2004",
-    label: "Fifth & Sixth Set",
+    label: "5th & 6th Set",
     members: [
       { name: "Attach Gideon", location: "Nsukka" },
       { name: "Wisdom Aniediitnen", contact: "07040242123", location: "Uyo" },
@@ -199,7 +206,7 @@ export const alumniDirectory: AlumniSet[] = [
   },
   {
     set: "2004/2005",
-    label: "Seventh Set",
+    label: "7th Set",
     members: [
       { name: "Evang. Ogba Emmanuel Obiako", contact: "08063843577", location: "Port Harcourt" },
       { name: "Ofili Franklin C.", contact: "08135055247", location: "Ogwashiukwu" },
@@ -213,7 +220,7 @@ export const alumniDirectory: AlumniSet[] = [
   },
   {
     set: "2005/2006",
-    label: "Eighth Set",
+    label: "8th Set",
     members: [
       { name: "Chukwu Samson O.", contact: "07032249153" },
       { name: "Ekanem Joseph", contact: "08034221444", location: "Akwa Ibom" },
@@ -221,7 +228,7 @@ export const alumniDirectory: AlumniSet[] = [
   },
   {
     set: "2006/2007",
-    label: "Ninth Set",
+    label: "9th Set",
     members: [
       { name: "Dominic Godspower", contact: "07036360997", location: "Yenagoa" },
       { name: "Afolabi Rosemary Z.", contact: "08068455298", location: "Port Harcourt" },
@@ -231,7 +238,7 @@ export const alumniDirectory: AlumniSet[] = [
   },
   {
     set: "2007/2008",
-    label: "Tenth Set",
+    label: "10th Set",
     members: [
       { name: "Igwemadu Gloria Chinenye", location: "Anambra State" },
       { name: "Anolefo Charles", location: "Onitsha" },
@@ -246,7 +253,7 @@ export const alumniDirectory: AlumniSet[] = [
   },
   {
     set: "2008/2009",
-    label: "Eleventh Set",
+    label: "11th Set",
     members: [
       { name: "Okafor Fortunatus", contact: "07037232740", location: "Onitsha" },
       { name: "Enemuo Kingsley Nnamdi", contact: "08065346494", location: "Canada" },
@@ -259,7 +266,7 @@ export const alumniDirectory: AlumniSet[] = [
   },
   {
     set: "2009/2010",
-    label: "Twelfth Set",
+    label: "12th Set",
     members: [
       { name: "Uwakwe Godsown Ifeanyi", contact: "08030477837", location: "Abia State" },
       { name: "Onwo Onyeomere Obed", contact: "08037705542", location: "Abia State" },
@@ -273,7 +280,7 @@ export const alumniDirectory: AlumniSet[] = [
   },
   {
     set: "2010/2011",
-    label: "Thirteenth Set",
+    label: "13th Set",
     members: [
       { name: "Mark Osondu", contact: "07030901229", location: "Aguleri" },
       { name: "Frank Ebiegberi", contact: "07033374006", location: "Yenagoa" },
@@ -287,7 +294,7 @@ export const alumniDirectory: AlumniSet[] = [
   },
   {
     set: "2011/2012",
-    label: "Fourteenth Set",
+    label: "14th Set",
     members: [
       { name: "Eblem Ifeanyi John", contact: "08085065587", location: "Onitsha" },
       { name: "Atuh Stephen", contact: "07038580004", location: "Ebonyi State" },
@@ -305,7 +312,7 @@ export const alumniDirectory: AlumniSet[] = [
   },
   {
     set: "2014/2015",
-    label: "Seventeenth Set",
+    label: "17th Set",
     members: [
       { name: "Agbonsalo Alfred Egharevba", contact: "08067568129", location: "Edo State" },
       { name: "Atueyi Chinemelum Greatness", contact: "08165196319", location: "Delta State" },
@@ -316,7 +323,7 @@ export const alumniDirectory: AlumniSet[] = [
   },
   {
     set: "2015/2016",
-    label: "Eighteenth Set",
+    label: "18th Set",
     members: [
       { name: "Okeke Onyedika Michael", contact: "08138079931", location: "Anambra State" },
       { name: "Alabi Peter Oluwabori", contact: "07033082620", location: "Lagos State" },
@@ -332,7 +339,7 @@ export const alumniDirectory: AlumniSet[] = [
   },
   {
     set: "2016/2017",
-    label: "Nineteenth Set",
+    label: "19th Set",
     members: [
       { name: "Obinna Ukwuoma", location: "Anambra" },
       { name: "Victor Njoku", contact: "08160197064" },
@@ -344,7 +351,7 @@ export const alumniDirectory: AlumniSet[] = [
   },
   {
     set: "2017/2018",
-    label: "Twentieth Set",
+    label: "20th Set",
     members: [
       { name: "Onyeka Toochukwu", location: "Anambra" },
       { name: "Chibuike Joshua", location: "Lagos" },
@@ -354,7 +361,7 @@ export const alumniDirectory: AlumniSet[] = [
   },
   {
     set: "2018/2019",
-    label: "Twenty-First Set",
+    label: "21st Set",
     members: [
       { name: "Onyeka Oluebube", location: "Anambra" },
       { name: "Ajayi Adewale", location: "Ibadan" },
@@ -367,7 +374,7 @@ export const alumniDirectory: AlumniSet[] = [
   },
   {
     set: "2019/2020",
-    label: "Twenty-Second Set",
+    label: "22nd Set",
     members: [
       { name: "Ifemeje Osinachukwu Goodness", contact: "08109897283", location: "Abuja" },
       { name: "Ahamefuna John", contact: "08105804108" },
@@ -375,7 +382,7 @@ export const alumniDirectory: AlumniSet[] = [
   },
   {
     set: "2022/2023",
-    label: "Twenty-Fifth Set",
+    label: "25th Set",
     members: [
       { name: "Odita Emmanuel" },
       { name: "Isaac Adamu", contact: "08134493628" },

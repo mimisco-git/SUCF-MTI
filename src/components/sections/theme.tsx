@@ -11,7 +11,7 @@ export function Theme() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="font-mono text-xs uppercase tracking-[0.3em] text-green-700"
+          className="font-mono text-[17px] uppercase tracking-[0.3em] text-green-700"
         >
           The Theme
         </motion.p>
@@ -20,7 +20,7 @@ export function Theme() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="mt-4 font-display text-3xl text-ink-950 sm:text-4xl"
+          className="mt-4 font-display text-[35px] text-ink-950 sm:text-[41px]"
         >
           &ldquo;The walls of faith, of family altars, of truth&rdquo;
         </motion.h2>
@@ -33,15 +33,15 @@ export function Theme() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.15 }}
-              className="relative rounded-2xl border border-black/8 bg-paper-200 p-8 shadow-block"
+              className="glass-card relative rounded-2xl p-8"
             >
-              <span className="absolute -top-5 left-7 font-display text-6xl text-green-700/25">
+              <span className="absolute -top-5 left-7 font-display text-[65px] text-green-700/25">
                 &ldquo;
               </span>
-              <p className="font-display text-lg italic leading-relaxed text-ink-800">
+              <p className="font-display text-[23px] italic leading-relaxed text-ink-800">
                 {s.text}
               </p>
-              <cite className="mt-5 block font-mono text-xs uppercase tracking-[0.2em] text-green-500 not-italic">
+              <cite className="mt-5 block font-mono text-[17px] uppercase tracking-[0.2em] text-green-500 not-italic">
                 {s.ref}
               </cite>
             </motion.blockquote>

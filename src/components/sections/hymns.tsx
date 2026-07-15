@@ -6,13 +6,13 @@ import { hymns } from "@/lib/data";
 
 export function Hymns() {
   return (
-    <section id="hymns" className="relative bg-white py-28 lg:py-36">
+    <section id="hymns" className="relative bg-paper-50 py-28 lg:py-36">
       <div className="mx-auto max-w-6xl px-6 lg:px-10">
         <div className="mb-14 max-w-xl">
-          <p className="font-mono text-xs uppercase tracking-[0.3em] text-green-700">
+          <p className="font-mono text-[17px] uppercase tracking-[0.3em] text-green-700">
             Hymns &amp; Anthems
           </p>
-          <h2 className="mt-4 font-display text-3xl text-ink-950 sm:text-4xl">
+          <h2 className="mt-4 font-display text-[35px] text-ink-950 sm:text-[41px]">
             Songs we rebuild with
           </h2>
         </div>
@@ -25,15 +25,15 @@ export function Hymns() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: (i % 4) * 0.08 }}
-              className="rounded-2xl border border-black/8 bg-paper-200 p-7"
+              className="glass-card rounded-2xl p-7"
             >
               <div className="mb-4 flex items-center gap-2 text-green-700">
                 <Music2 className="h-4 w-4" />
-                <h3 className="font-display text-lg text-ink-950">
+                <h3 className="font-display text-[23px] text-ink-950">
                   {hymn.title}
                 </h3>
               </div>
-              <div className="space-y-3 text-sm leading-relaxed text-slate-600">
+              <div className="space-y-3 text-[19px] leading-relaxed text-slate-600">
                 {hymn.verses.map((v, vi) => (
                   <p key={vi}>{v}</p>
                 ))}

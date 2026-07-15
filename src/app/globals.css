@@ -10,10 +10,10 @@
   --color-ink-900: #12160f;
   --color-ink-800: #1e241d;
 
-  /* paper, the base white/off-white for content sections */
-  --color-paper-50: #ffffff;
-  --color-paper-100: #f4f7f2;
-  --color-paper-200: #e8f0e6;
+  /* paper, the base white/off-white for content sections (slightly dimmed, not stark white) */
+  --color-paper-50: #f6f7f4;
+  --color-paper-100: #eff2ec;
+  --color-paper-200: #e3eae0;
 
   /* brand green */
   --color-green-700: #146c43;
@@ -85,6 +85,24 @@ body {
 @keyframes accordion-up {
   from { height: var(--radix-accordion-content-height); opacity: 1; }
   to { height: 0; opacity: 0; }
+}
+
+/* premium glass card treatment */
+.glass-card {
+  background: rgba(255, 255, 255, 0.58);
+  backdrop-filter: blur(18px) saturate(1.15);
+  -webkit-backdrop-filter: blur(18px) saturate(1.15);
+  border: 1px solid rgba(10, 12, 9, 0.08);
+  box-shadow:
+    0 1px 0 0 rgba(255, 255, 255, 0.6) inset,
+    0 20px 44px -26px rgba(10, 12, 9, 0.28);
+}
+
+.glass-card-dark {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(18px) saturate(1.15);
+  -webkit-backdrop-filter: blur(18px) saturate(1.15);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 /* scrollbar */

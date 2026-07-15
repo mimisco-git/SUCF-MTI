@@ -33,13 +33,13 @@ export function Directory() {
     <section id="directory" className="relative bg-paper-100 py-28 lg:py-36">
       <div className="mx-auto max-w-6xl px-6 lg:px-10">
         <div className="mb-4 max-w-xl">
-          <p className="font-mono text-xs uppercase tracking-[0.3em] text-green-700">
+          <p className="font-mono text-[17px] uppercase tracking-[0.3em] text-green-700">
             Alumni Directory
           </p>
-          <h2 className="mt-4 font-display text-3xl text-ink-950 sm:text-4xl">
+          <h2 className="mt-4 font-display text-[35px] text-ink-950 sm:text-[41px]">
             Every set, a course in the wall
           </h2>
-          <p className="mt-4 text-sm leading-relaxed text-slate-600">
+          <p className="mt-4 text-[19px] leading-relaxed text-slate-600">
             From the 1998/1999 pioneer graduates at the foundation, to the
             newest set at the top, twenty-seven years of alumni stacked like
             courses of stone, each one bearing the weight of the next.
@@ -60,7 +60,7 @@ export function Directory() {
         </div>
 
         {courses.length === 0 ? (
-          <p className="rounded-2xl border border-black/8 bg-paper-200 p-10 text-center text-sm text-slate-600">
+          <p className="glass-card rounded-2xl p-10 text-center text-[19px] text-slate-600">
             No alumni found. Try a different name, set, or state.
           </p>
         ) : (
@@ -72,15 +72,15 @@ export function Directory() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.5, delay: (ci % 8) * 0.04 }}
-                className={`rounded-xl border border-black/8 bg-paper-200 p-5 shadow-block ${
+                className={`glass-card rounded-xl p-5 ${
                   ci % 2 === 0 ? "sm:ml-0 sm:mr-8" : "sm:ml-8 sm:mr-0"
                 }`}
               >
                 <div className="mb-3 flex flex-wrap items-baseline justify-between gap-2 border-b border-black/8 pb-3">
-                  <h3 className="font-display text-lg text-ink-950">
+                  <h3 className="font-display text-[23px] text-ink-950">
                     {set.label}
                   </h3>
-                  <span className="font-mono text-xs uppercase tracking-[0.15em] text-green-600">
+                  <span className="font-mono text-[17px] uppercase tracking-[0.15em] text-green-600">
                     {set.set}
                   </span>
                 </div>
@@ -88,10 +88,10 @@ export function Directory() {
                   {set.members.map((m) => (
                     <div
                       key={m.name}
-                      className="flex flex-col gap-0.5 text-sm text-slate-600"
+                      className="flex flex-col gap-0.5 text-[19px] text-slate-600"
                     >
                       <span className="text-ink-800">{m.name}</span>
-                      <span className="flex flex-wrap items-center gap-x-4 font-mono text-xs text-slate-400">
+                      <span className="flex flex-wrap items-center gap-x-4 font-mono text-[17px] text-slate-400">
                         {m.contact && (
                           <span className="flex items-center gap-1">
                             <Phone className="h-3 w-3" /> {m.contact}

@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ProgramTicker } from "./program-ticker";
 
 const links = [
   { href: "#theme", label: "Theme" },
@@ -30,20 +30,13 @@ export function Nav() {
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       className="fixed inset-x-0 top-0 z-50"
     >
-      {/* utility bar: motto + scholarship note */}
-      <div className="border-b border-black/8 bg-white">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-2.5 lg:px-10">
-          <p className="text-xs font-semibold text-ink-950 sm:text-sm">
-            Think SUCF, Pray SUCF
-            <span className="text-green-700"> and Act SUCF</span>
+      {/* utility bar: rolling weekly programs */}
+      <div className="border-b border-black/8 bg-paper-50">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-2 lg:px-10">
+          <ProgramTicker />
+          <p className="hidden font-mono text-[15px] uppercase tracking-[0.2em] text-slate-400 sm:block">
+            Think SUCF <span className="text-green-700">&middot; Pray SUCF &middot; Act SUCF</span>
           </p>
-          <a
-            href="#schedule"
-            className="hidden shrink-0 items-center gap-1.5 rounded-full bg-green-700 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-wide text-white transition-colors hover:bg-green-600 sm:inline-flex"
-          >
-            Scholarship Seminar
-            <ArrowRight className="h-3 w-3" />
-          </a>
         </div>
       </div>
 
@@ -55,45 +48,38 @@ export function Nav() {
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 lg:px-10">
           <a href="#top" className="flex items-center gap-3">
-            <span className="flex items-center -space-x-2">
+            <span className="flex shrink-0 items-center gap-2">
               <Image
                 src="/nmti-logo.png"
                 alt="National Metallurgical Training Institute seal"
-                width={34}
-                height={34}
-                className="rounded-full ring-2 ring-ink-950"
+                width={32}
+                height={32}
+                className="rounded-full ring-1 ring-white/15"
               />
               <Image
                 src="/sucf-icon.png"
                 alt="SUCF emblem"
-                width={34}
-                height={34}
-                className="rounded-full ring-2 ring-ink-950"
+                width={30}
+                height={30}
                 priority
               />
             </span>
-            <span className="font-display text-sm tracking-wide text-white">
+            <span className="font-display text-[19px] tracking-wide text-white">
               SUCF <span className="text-green-500">&middot;</span> MTI Onitsha
             </span>
           </a>
-          <ul className="hidden items-center gap-8 md:flex">
+          <ul className="hidden items-center gap-7 md:flex">
             {links.map((l) => (
               <li key={l.href}>
                 <a
                   href={l.href}
-                  className="text-xs font-medium uppercase tracking-[0.15em] text-white/70 transition-colors hover:text-green-500"
+                  className="text-[17px] font-medium uppercase tracking-[0.15em] text-white/70 transition-colors hover:text-green-500"
                 >
                   {l.label}
                 </a>
               </li>
             ))}
           </ul>
-          <a
-            href="#schedule"
-            className="hidden rounded-full bg-green-700 px-5 py-2 text-xs font-semibold uppercase tracking-[0.15em] text-white transition-colors hover:bg-green-600 md:inline-block"
-          >
-            31 Oct &middot; 2 Nov
-          </a>
         </div>
       </nav>
     </motion.header>

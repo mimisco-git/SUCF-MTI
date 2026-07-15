@@ -18,22 +18,22 @@ export function Footer() {
             <Image
               src="/sucf-logo.png"
               alt="SUCF emblem"
-              width={110}
-              height={59}
-              className="h-14 w-auto"
+              width={140}
+              height={111}
+              className="h-16 w-auto"
             />
           </div>
-          <p className="font-display text-xl italic text-white">
+          <p className="font-display text-[25px] italic text-white">
             &ldquo;Welcome home, brethren. Together, let us rebuild the broken
             walls.&rdquo;
           </p>
-          <p className="font-mono text-xs uppercase tracking-[0.25em] text-green-500">
+          <p className="font-mono text-[17px] uppercase tracking-[0.25em] text-green-500">
             Think SUCF, Pray SUCF, Act SUCF
           </p>
-          <p className="font-mono text-xs uppercase tracking-[0.2em] text-white/50">
+          <p className="font-mono text-[17px] uppercase tracking-[0.2em] text-white/50">
             {event.fellowship} &middot; {event.institute}
           </p>
-          <p className="font-mono text-[11px] text-white/40">
+          <p className="font-mono text-[16px] text-white/40">
             {event.edition} &middot; {event.dates} &middot; {event.venue}
           </p>
         </div>
