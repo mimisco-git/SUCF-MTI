@@ -11,7 +11,9 @@ const links = [
   { href: "#schedule", label: "Schedule" },
   { href: "#study", label: "Bible Study" },
   { href: "#directory", label: "Directory" },
+  { href: "#scholarship", label: "Scholarship" },
   { href: "#hymns", label: "Hymns" },
+  { href: "#prayer-wall", label: "Prayer Wall" },
 ];
 
 export function Nav() {
@@ -68,12 +70,12 @@ export function Nav() {
               SUCF <span className="text-green-500">&middot;</span> MTI Onitsha
             </span>
           </a>
-          <ul className="hidden items-center gap-7 md:flex">
+          <ul className="hidden items-center gap-5 lg:flex">
             {links.map((l) => (
               <li key={l.href}>
                 <a
                   href={l.href}
-                  className="text-[17px] font-medium uppercase tracking-[0.15em] text-white/70 transition-colors hover:text-green-500"
+                  className="text-[15px] font-medium uppercase tracking-[0.12em] text-white/70 transition-colors hover:text-green-500"
                 >
                   {l.label}
                 </a>

@@ -5,6 +5,17 @@ export const weeklyPrograms = [
   { day: "Thursday Bible Study", time: "4:00 PM" },
 ];
 
+export const contact = {
+  phone: "+234 813 505 5247",
+  email: "contact@sucf-nmti-alumni.org",
+  bank: {
+    name: "Access Bank PLC",
+    accountName: "SUCF MTI Onitsha",
+    accountNumber: "0765432109",
+  },
+  address: "School Auditorium, MTI Onitsha, Anambra State, Nigeria",
+};
+
 export const event = {
   fellowship: "Scripture Union Campus Fellowship",
   institute: "Metallurgical Training Institute, Onitsha",

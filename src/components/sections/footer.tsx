@@ -1,7 +1,23 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
-import { event } from "@/lib/data";
+import { Copy, Check, Phone, Mail, Landmark } from "lucide-react";
+import { event, contact } from "@/lib/data";
 
 export function Footer() {
+  const [copied, setCopied] = useState(false);
+
+  const copyAccount = async () => {
+    try {
+      await navigator.clipboard.writeText(contact.bank.accountNumber);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // clipboard not available, ignore
+    }
+  };
+
   return (
     <footer className="relative border-t border-white/10 bg-ink-950 py-16">
       <div className="mx-auto max-w-6xl px-6 lg:px-10">
@@ -36,6 +52,55 @@ export function Footer() {
           <p className="font-mono text-[16px] text-white/40">
             {event.edition} &middot; {event.dates} &middot; {event.venue}
           </p>
+
+          {/* contact + giving */}
+          <div className="mt-6 grid w-full max-w-2xl gap-3 border-t border-white/10 pt-8 sm:grid-cols-2">
+            <a
+              href={`tel:${contact.phone.replace(/\s+/g, "")}`}
+              className="glass-card-dark flex items-center gap-3 rounded-2xl px-5 py-4 text-left transition-colors hover:bg-white/10"
+            >
+              <Phone className="h-4 w-4 shrink-0 text-green-500" />
+              <span>
+                <span className="block font-mono text-[15px] uppercase tracking-[0.15em] text-white/40">
+                  Call
+                </span>
+                <span className="text-[17px] text-white">{contact.phone}</span>
+              </span>
+            </a>
+            <a
+              href={`mailto:${contact.email}`}
+              className="glass-card-dark flex items-center gap-3 rounded-2xl px-5 py-4 text-left transition-colors hover:bg-white/10"
+            >
+              <Mail className="h-4 w-4 shrink-0 text-green-500" />
+              <span>
+                <span className="block font-mono text-[15px] uppercase tracking-[0.15em] text-white/40">
+                  Email
+                </span>
+                <span className="text-[17px] text-white">{contact.email}</span>
+              </span>
+            </a>
+          </div>
+
+          <button
+            onClick={copyAccount}
+            className="glass-card-dark flex w-full max-w-2xl items-center gap-3 rounded-2xl px-5 py-4 text-left transition-colors hover:bg-white/10"
+          >
+            <Landmark className="h-4 w-4 shrink-0 text-green-500" />
+            <span className="flex-1">
+              <span className="block font-mono text-[15px] uppercase tracking-[0.15em] text-white/40">
+                Give &middot; {contact.bank.name}
+              </span>
+              <span className="text-[17px] text-white">
+                {contact.bank.accountName} &middot;{" "}
+                <span className="font-mono">{contact.bank.accountNumber}</span>
+              </span>
+            </span>
+            {copied ? (
+              <Check className="h-4 w-4 shrink-0 text-green-500" />
+            ) : (
+              <Copy className="h-4 w-4 shrink-0 text-white/40" />
+            )}
+          </button>
         </div>
       </div>
     </footer>
