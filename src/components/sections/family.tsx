@@ -33,12 +33,16 @@ export function Family() {
               transition={{ duration: 0.6, delay: i * 0.08 }}
               className="glass-card overflow-hidden rounded-3xl"
             >
-              <div className="relative aspect-[4/3] w-full overflow-hidden bg-paper-200">
+              <div
+                className={`relative w-full overflow-hidden bg-paper-200 ${
+                  p.orientation === "portrait" ? "aspect-[3/4]" : "aspect-[4/3]"
+                }`}
+              >
                 <Image
                   src={p.src}
                   alt={p.caption}
                   fill
-                  className="object-cover"
+                  className="object-cover object-top"
                   sizes="(max-width: 640px) 100vw, 50vw"
                 />
               </div>

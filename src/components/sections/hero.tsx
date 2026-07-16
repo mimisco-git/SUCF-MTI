@@ -1,10 +1,13 @@
 "use client";
 
+import { useState } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowDown, Archive, Calendar, MapPin, User } from "lucide-react";
-import { event } from "@/lib/data";
+import { Archive, Calendar, MapPin, User, Calculator, ArrowRight } from "lucide-react";
+import { event, familyPhotos } from "@/lib/data";
+import { DailyManna } from "@/components/daily-manna";
+import { CgpaCalculator } from "@/components/cgpa-calculator";
 
 const CornerstoneScene = dynamic(
   () => import("@/components/cornerstone-scene").then((m) => m.CornerstoneScene),
@@ -12,9 +15,11 @@ const CornerstoneScene = dynamic(
 );
 
 export function Hero({ onNavigate }: { onNavigate: (id: string) => void }) {
+  const [calcOpen, setCalcOpen] = useState(false);
+
   return (
     <section
-      className="relative flex min-h-[88svh] items-center overflow-hidden bg-paper-50 texture-mortar"
+      className="relative flex items-center overflow-hidden bg-paper-50 texture-mortar"
     >
       {/* ambient gradient wash */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(15,81,50,0.12),_transparent_55%)]" />
@@ -107,6 +112,13 @@ export function Hero({ onNavigate }: { onNavigate: (id: string) => void }) {
             >
               Apply for Scholarship
             </button>
+            <button
+              onClick={() => setCalcOpen(true)}
+              className="flex h-13 items-center gap-2 rounded-xl bg-ink-950 px-7 text-[15px] font-semibold text-white shadow-md transition-colors hover:bg-ink-800"
+            >
+              <Calculator className="h-4 w-4 text-green-500" />
+              Academic CGPA Planner
+            </button>
           </motion.div>
 
           <motion.div
@@ -157,21 +169,61 @@ export function Hero({ onNavigate }: { onNavigate: (id: string) => void }) {
           </motion.div>
         </div>
 
-        <div className="relative h-[22rem] lg:h-[30rem]">
-          <CornerstoneScene />
+        <div className="flex flex-col items-center gap-6 lg:items-stretch">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+          >
+            <DailyManna />
+          </motion.div>
+          <div className="relative h-[16rem] w-full lg:h-[20rem]">
+            <CornerstoneScene />
+          </div>
         </div>
       </div>
 
-      <motion.button
-        onClick={() => onNavigate("theme")}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.1 }}
-        className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2 text-slate-600"
-      >
-        <span className="text-[15px] uppercase tracking-[0.3em]">Explore</span>
-        <ArrowDown className="h-4 w-4 animate-bounce text-green-700" />
-      </motion.button>
+      {/* family preview strip */}
+      <div className="relative z-10 mx-auto mt-4 max-w-7xl px-6 pb-16 lg:px-10">
+        <div className="mb-5 flex items-center justify-between">
+          <p className="font-mono text-[13px] font-bold uppercase tracking-[0.2em] text-slate-400">
+            The Family
+          </p>
+          <button
+            onClick={() => onNavigate("family")}
+            className="flex items-center gap-1 text-[14px] font-semibold text-green-700 hover:text-green-600"
+          >
+            See more <ArrowRight className="h-3.5 w-3.5" />
+          </button>
+        </div>
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+          {familyPhotos.map((p, i) => (
+            <motion.button
+              key={p.src}
+              onClick={() => onNavigate("family")}
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.8 + i * 0.06 }}
+              className="glass-card group overflow-hidden rounded-2xl text-left"
+            >
+              <div className="relative aspect-square w-full overflow-hidden bg-paper-200">
+                <Image
+                  src={p.src}
+                  alt={p.caption}
+                  fill
+                  className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 640px) 50vw, 25vw"
+                />
+              </div>
+              <p className="truncate px-3 py-2 text-[13px] font-semibold text-ink-800">
+                {p.caption}
+              </p>
+            </motion.button>
+          ))}
+        </div>
+      </div>
+
+      <CgpaCalculator open={calcOpen} onClose={() => setCalcOpen(false)} />
     </section>
   );
 }

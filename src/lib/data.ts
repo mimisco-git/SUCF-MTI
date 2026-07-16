@@ -5,26 +5,65 @@ export const weeklyPrograms = [
   { day: "Thursday Bible Study", time: "4:00 PM" },
 ];
 
+export const dailyManna = [
+  {
+    text: "For the weapons of our warfare are not carnal, but mighty through God to the pulling down of strong holds.",
+    ref: "2 Corinthians 10:4",
+  },
+  {
+    text: "I can do all things through Christ which strengtheneth me.",
+    ref: "Philippians 4:13",
+  },
+  {
+    text: "Trust in the Lord with all thine heart, and lean not unto thine own understanding.",
+    ref: "Proverbs 3:5",
+  },
+  {
+    text: "The Lord is my shepherd, I shall not want.",
+    ref: "Psalm 23:1",
+  },
+  {
+    text: "Be strong and of a good courage, be not afraid: for the Lord thy God is with thee.",
+    ref: "Joshua 1:9",
+  },
+  {
+    text: "And we know that all things work together for good to them that love God.",
+    ref: "Romans 8:28",
+  },
+  {
+    text: "Come unto me, all ye that labour and are heavy laden, and I will give you rest.",
+    ref: "Matthew 11:28",
+  },
+  {
+    text: "Rejoice in the Lord alway: and again I say, Rejoice.",
+    ref: "Philippians 4:4",
+  },
+];
+
 export const familyPhotos = [
   {
     src: "/family/president-chairman.jpg",
     caption: "Current President & Area Chairman",
     detail: "Bro. Onyibo Divine Uchenna with the Onitsha Area Chairman",
+    orientation: "portrait" as const,
   },
   {
     src: "/family/matron.jpg",
     caption: "Mrs. Umehzinwa Chikodili",
     detail: "Current Fellowship Matron",
+    orientation: "portrait" as const,
   },
   {
     src: "/family/national-conference.jpg",
     caption: "National Conference",
     detail: "MTI brethren who attended the SU National Conference",
+    orientation: "landscape" as const,
   },
   {
     src: "/family/onitsha-area.jpg",
     caption: "Onitsha Area Fellowship",
     detail: "Brethren of the wider Onitsha Area",
+    orientation: "landscape" as const,
   },
 ];
 

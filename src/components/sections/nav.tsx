@@ -50,13 +50,6 @@ const groups: NavGroup[] = [
       { id: "prayer-wall", label: "Prayer Wall", icon: Flame, blurb: "Carry one another" },
     ],
   },
-  {
-    id: "support",
-    label: "Support",
-    links: [
-      { id: "scholarship", label: "Scholarship", icon: Award, blurb: "Apply & check your CGPA" },
-    ],
-  },
 ];
 
 export function Nav({
@@ -213,6 +206,17 @@ export function Nav({
               })}
             </nav>
             <button
+              onClick={() => pick("scholarship")}
+              className={`flex items-center gap-1.5 rounded-2xl px-4 py-2.5 text-xs font-bold transition-all ${
+                active === "scholarship"
+                  ? "bg-gradient-to-r from-green-500 to-amber-700 text-white shadow-md"
+                  : "border border-green-500/25 text-green-600 hover:bg-amber-50"
+              }`}
+            >
+              <Award className="h-3.5 w-3.5" />
+              <span>Scholarship</span>
+            </button>
+            <button
               onClick={() => goGive()}
               className="ml-1 flex items-center gap-1.5 rounded-2xl bg-ink-950 px-4.5 py-2.5 text-xs font-extrabold text-white shadow-md transition-all hover:-translate-y-0.5 hover:bg-ink-800 hover:shadow-lg"
             >
@@ -281,6 +285,17 @@ export function Nav({
                   </div>
                 </div>
               ))}
+              <button
+                onClick={() => pick("scholarship")}
+                className={`flex w-full items-center justify-center gap-2 rounded-xl py-3 text-sm font-bold transition-all ${
+                  active === "scholarship"
+                    ? "bg-gradient-to-r from-green-500 to-amber-700 text-white shadow-md"
+                    : "border border-green-500/25 text-green-600"
+                }`}
+              >
+                <Award className="h-4 w-4" />
+                <span>Scholarship</span>
+              </button>
               <button
                 onClick={() => goGive()}
                 className="flex w-full items-center justify-center gap-2 rounded-xl bg-ink-950 py-3 text-sm font-extrabold text-white shadow-md"
