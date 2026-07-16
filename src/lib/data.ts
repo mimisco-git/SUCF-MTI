@@ -5,6 +5,29 @@ export const weeklyPrograms = [
   { day: "Thursday Bible Study", time: "4:00 PM" },
 ];
 
+export const familyPhotos = [
+  {
+    src: "/family/president-chairman.jpg",
+    caption: "Current President & Area Chairman",
+    detail: "Bro. Onyibo Divine Uchenna with the Onitsha Area Chairman",
+  },
+  {
+    src: "/family/matron.jpg",
+    caption: "Mrs. Umehzinwa Chikodili",
+    detail: "Current Fellowship Matron",
+  },
+  {
+    src: "/family/national-conference.jpg",
+    caption: "National Conference",
+    detail: "MTI brethren who attended the SU National Conference",
+  },
+  {
+    src: "/family/onitsha-area.jpg",
+    caption: "Onitsha Area Fellowship",
+    detail: "Brethren of the wider Onitsha Area",
+  },
+];
+
 export const contact = {
   phone: "+234 813 505 5247",
   email: "contact@sucf-nmti-alumni.org",

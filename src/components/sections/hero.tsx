@@ -11,10 +11,9 @@ const CornerstoneScene = dynamic(
   { ssr: false }
 );
 
-export function Hero() {
+export function Hero({ onNavigate }: { onNavigate: (id: string) => void }) {
   return (
     <section
-      id="top"
       className="relative flex min-h-[88svh] items-center overflow-hidden bg-paper-50 texture-mortar"
     >
       {/* ambient gradient wash */}
@@ -96,18 +95,18 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.52 }}
             className="mt-8 flex flex-wrap items-center gap-3.5"
           >
-            <a
-              href="#schedule"
+            <button
+              onClick={() => onNavigate("schedule")}
               className="flex h-13 items-center gap-2 rounded-xl bg-gradient-to-r from-green-500 to-amber-700 px-7 text-[15px] font-semibold text-white shadow-[0_10px_25px_rgba(217,119,6,0.2)] transition-all hover:shadow-[0_12px_30px_rgba(217,119,6,0.3)]"
             >
               View Program Schedule
-            </a>
-            <a
-              href="#scholarship"
+            </button>
+            <button
+              onClick={() => onNavigate("scholarship")}
               className="glass-card flex h-13 items-center gap-2 rounded-xl px-7 text-[15px] font-semibold text-ink-800 transition-colors hover:text-green-700"
             >
               Apply for Scholarship
-            </a>
+            </button>
           </motion.div>
 
           <motion.div
@@ -163,16 +162,16 @@ export function Hero() {
         </div>
       </div>
 
-      <motion.a
-        href="#theme"
+      <motion.button
+        onClick={() => onNavigate("theme")}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.1 }}
         className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2 text-slate-600"
       >
-        <span className="text-[15px] uppercase tracking-[0.3em]">Scroll</span>
+        <span className="text-[15px] uppercase tracking-[0.3em]">Explore</span>
         <ArrowDown className="h-4 w-4 animate-bounce text-green-700" />
-      </motion.a>
+      </motion.button>
     </section>
   );
 }
