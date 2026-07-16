@@ -82,6 +82,7 @@ export function Footer() {
           </div>
 
           <button
+            id="give"
             onClick={copyAccount}
             className="glass-card-dark flex w-full max-w-2xl items-center gap-3 rounded-2xl px-5 py-4 text-left transition-colors hover:bg-white/10"
           >

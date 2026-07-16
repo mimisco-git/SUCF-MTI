@@ -3,7 +3,7 @@
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowDown, Archive } from "lucide-react";
+import { ArrowDown, Archive, Calendar, MapPin, User } from "lucide-react";
 import { event } from "@/lib/data";
 
 const CornerstoneScene = dynamic(
@@ -15,13 +15,13 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-[100svh] items-center overflow-hidden bg-paper-50 texture-mortar"
+      className="relative flex min-h-[88svh] items-center overflow-hidden bg-paper-50 texture-mortar"
     >
       {/* ambient gradient wash */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(20,108,67,0.12),_transparent_55%)]" />
-      <div className="pointer-events-none absolute -bottom-40 left-1/2 h-[36rem] w-[36rem] -translate-x-1/2 rounded-full bg-green-700/10 blur-3xl" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(15,81,50,0.12),_transparent_55%)]" />
+      <div className="pointer-events-none absolute -bottom-40 left-1/2 h-[36rem] w-[36rem] -translate-x-1/2 rounded-full bg-green-500/10 blur-3xl" />
 
-      <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 px-6 pt-36 lg:grid-cols-[1.1fr_0.9fr] lg:px-10 lg:pt-32">
+      <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 px-6 py-16 lg:grid-cols-[1.1fr_0.9fr] lg:px-10 lg:py-20">
         <div>
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -93,22 +93,67 @@ export function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.6 }}
-            className="glass-card mt-10 flex flex-wrap items-center gap-x-10 gap-y-4 rounded-2xl px-6 py-5 font-mono text-[17px] uppercase tracking-[0.2em] text-slate-600"
+            transition={{ duration: 0.7, delay: 0.52 }}
+            className="mt-8 flex flex-wrap items-center gap-3.5"
           >
-            <div>
-              <p className="text-green-600">Held</p>
-              <p className="mt-1 text-ink-800">{event.dates}</p>
+            <a
+              href="#schedule"
+              className="flex h-13 items-center gap-2 rounded-xl bg-gradient-to-r from-green-500 to-amber-700 px-7 text-[15px] font-semibold text-white shadow-[0_10px_25px_rgba(217,119,6,0.2)] transition-all hover:shadow-[0_12px_30px_rgba(217,119,6,0.3)]"
+            >
+              View Program Schedule
+            </a>
+            <a
+              href="#scholarship"
+              className="glass-card flex h-13 items-center gap-2 rounded-xl px-7 text-[15px] font-semibold text-ink-800 transition-colors hover:text-green-700"
+            >
+              Apply for Scholarship
+            </a>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.6 }}
+            className="glass-card mt-8 flex flex-wrap items-center gap-x-8 gap-y-4 rounded-2xl px-6 py-5"
+          >
+            <div className="flex items-center gap-3">
+              <span className="rounded-xl border border-green-100 bg-green-100 p-2.5">
+                <Calendar className="h-4 w-4 text-green-700" />
+              </span>
+              <span>
+                <p className="font-mono text-[11px] font-bold uppercase leading-none tracking-[0.15em] text-slate-400">
+                  Held
+                </p>
+                <p className="mt-1 text-[17px] font-semibold text-ink-800">
+                  {event.dates}
+                </p>
+              </span>
             </div>
-            <div className="h-8 w-px bg-black/6" />
-            <div>
-              <p className="text-green-600">Venue</p>
-              <p className="mt-1 text-ink-800">{event.venue}</p>
+            <div className="flex items-center gap-3">
+              <span className="rounded-xl border border-green-100 bg-green-100 p-2.5">
+                <MapPin className="h-4 w-4 text-green-700" />
+              </span>
+              <span>
+                <p className="font-mono text-[11px] font-bold uppercase leading-none tracking-[0.15em] text-slate-400">
+                  Venue
+                </p>
+                <p className="mt-1 text-[17px] font-semibold text-ink-800">
+                  {event.venue}
+                </p>
+              </span>
             </div>
-            <div className="h-8 w-px bg-black/6" />
-            <div>
-              <p className="text-green-600">Expositor</p>
-              <p className="mt-1 text-ink-800">{event.expositor}</p>
+            <div className="flex items-center gap-3">
+              <span className="rounded-xl border border-green-100 bg-green-100 p-2.5">
+                <User className="h-4 w-4 text-green-700" />
+              </span>
+              <span>
+                <p className="font-mono text-[11px] font-bold uppercase leading-none tracking-[0.15em] text-slate-400">
+                  Expositor
+                </p>
+                <p className="mt-1 text-[17px] font-semibold text-ink-800">
+                  {event.expositor}
+                </p>
+              </span>
             </div>
           </motion.div>
         </div>

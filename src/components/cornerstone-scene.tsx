@@ -58,7 +58,8 @@ export function CornerstoneScene() {
       >
         <ambientLight intensity={0.65} color="#ffffff" />
         <directionalLight position={[4, 5, 2]} intensity={1.1} color="#ffffff" />
-        <directionalLight position={[-4, -2, -3]} intensity={0.55} color="#2fa968" />
+        <directionalLight position={[-4, -2, -3]} intensity={0.5} color="#198754" />
+        <directionalLight position={[2, -3, 3]} intensity={0.35} color="#d97706" />
         <Suspense fallback={null}>
           <Blocks />
         </Suspense>
