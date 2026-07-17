@@ -60,7 +60,25 @@ export const dailyManna = [
   },
 ];
 
+export const nationalConference = {
+  title: "SUCF National Conference 2026",
+  theme: "Presenting Everyone Perfect in Christ Jesus",
+  themeRef: "Colossians 1:28",
+  dates: "11th \u2013 14th June 2026",
+  venue: "Scripture Union Camp of Faith, Okigwe, Imo State",
+  expositor: "Engr. Uwem Cosmas Udoh, General Director, SU Nigeria",
+  registerUrl: "https://bit.ly/SUCFNC2026",
+  poster: "/family/national-conference-2026-poster.jpg",
+};
+
 export const familyPhotos = [
+  {
+    src: "/family/national-conference-2026-poster.jpg",
+    caption: "SUCF National Conference 2026",
+    detail: "\"Presenting Everyone Perfect in Christ Jesus\" \u2013 11th to 14th June, SU Camp of Faith, Okigwe, Imo State",
+    orientation: "portrait" as const,
+    link: "https://bit.ly/SUCFNC2026",
+  },
   {
     src: "/family/president-chairman.jpg",
     caption: "Current President & Area Chairman",

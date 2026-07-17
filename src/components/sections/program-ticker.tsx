@@ -55,7 +55,7 @@ export function ProgramTicker() {
         <ChevronLeft className="h-4 w-4" />
       </button>
 
-      <div className="relative h-[38px] flex-1 overflow-hidden">
+      <div className="relative h-[52px] flex-1 overflow-hidden">
         <AnimatePresence mode="wait">
           <motion.div
             key={current.day}
@@ -63,16 +63,16 @@ export function ProgramTicker() {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -16, opacity: 0 }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="absolute inset-0 flex flex-col justify-center gap-1"
+            className="absolute inset-0 flex flex-col justify-center gap-1.5 py-1"
           >
-            <span className="inline-flex w-fit items-center rounded-full bg-green-100 px-2.5 py-0.5 font-mono text-[11px] font-bold uppercase tracking-[0.1em] text-green-700">
+            <span className="inline-flex w-fit items-center rounded-full bg-green-100 px-2.5 py-1 font-mono text-[11px] font-bold uppercase leading-none tracking-[0.1em] text-green-700">
               {current.weekday} &middot; {current.time}
             </span>
-            <span className="flex items-baseline gap-2 truncate">
-              <span className="text-[15px] font-semibold text-ink-950">
+            <span className="flex items-baseline gap-2 truncate leading-none">
+              <span className="shrink-0 text-[15px] font-semibold leading-none text-ink-950">
                 {current.emoji} {current.day}
               </span>
-              <span className="hidden truncate text-[13px] text-slate-400 lg:inline">
+              <span className="hidden truncate text-[13px] leading-none text-slate-400 lg:inline">
                 {current.description}
               </span>
             </span>
@@ -90,7 +90,7 @@ export function ProgramTicker() {
 
       <button
         onClick={invite}
-        className="hidden shrink-0 items-center gap-1.5 rounded-full bg-green-700 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.1em] text-white transition-colors hover:bg-green-600 md:flex"
+        className="hidden shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full bg-green-700 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.1em] text-white transition-colors hover:bg-green-600 md:flex"
       >
         <Heart className="h-3 w-3 fill-current" />
         Invite a Friend

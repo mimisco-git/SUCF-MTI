@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Archive, Calendar, MapPin, User, Calculator, ArrowRight } from "lucide-react";
-import { event, familyPhotos } from "@/lib/data";
+import { event, familyPhotos, nationalConference } from "@/lib/data";
 import { DailyManna } from "@/components/daily-manna";
 import { CgpaCalculator } from "@/components/cgpa-calculator";
 
@@ -19,7 +19,7 @@ export function Hero({ onNavigate }: { onNavigate: (id: string) => void }) {
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(15,81,50,0.12),_transparent_55%)]" />
       <div className="pointer-events-none absolute -bottom-40 left-1/2 h-[36rem] w-[36rem] -translate-x-1/2 rounded-full bg-green-500/10 blur-3xl" />
 
-      <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 px-6 py-16 lg:grid-cols-[1.1fr_0.9fr] lg:px-10 lg:py-20">
+      <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 items-start gap-12 px-6 py-16 lg:grid-cols-[1.1fr_0.9fr] lg:px-10 lg:py-20">
         <div>
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -163,8 +163,9 @@ export function Hero({ onNavigate }: { onNavigate: (id: string) => void }) {
           </motion.div>
         </div>
 
-        <div className="relative flex flex-col items-center justify-center gap-6 lg:items-stretch">
+        <div className="relative flex flex-col gap-5">
           <div className="pointer-events-none absolute -inset-8 -z-10 hidden rounded-[3rem] bg-gradient-to-br from-green-100 via-transparent to-amber-100/40 blur-2xl lg:block" />
+
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -172,46 +173,80 @@ export function Hero({ onNavigate }: { onNavigate: (id: string) => void }) {
           >
             <DailyManna />
           </motion.div>
-        </div>
-      </div>
 
-      {/* family preview strip */}
-      <div className="relative z-10 mx-auto mt-4 max-w-7xl px-6 pb-16 lg:px-10">
-        <div className="mb-5 flex items-center justify-between">
-          <p className="font-mono text-[13px] font-bold uppercase tracking-[0.2em] text-slate-400">
-            The Family
-          </p>
-          <button
-            onClick={() => onNavigate("family")}
-            className="flex items-center gap-1 text-[14px] font-semibold text-green-700 hover:text-green-600"
+          <motion.a
+            href={nationalConference.registerUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.4 }}
+            className="glass-card card-hover flex items-center gap-4 rounded-3xl p-4"
           >
-            See more <ArrowRight className="h-3.5 w-3.5" />
-          </button>
-        </div>
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-          {familyPhotos.map((p, i) => (
-            <motion.button
-              key={p.src}
-              onClick={() => onNavigate("family")}
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.8 + i * 0.06 }}
-              className="glass-card card-hover group overflow-hidden rounded-2xl text-left"
-            >
-              <div className="relative aspect-square w-full overflow-hidden bg-paper-200">
-                <Image
-                  src={p.src}
-                  alt={p.caption}
-                  fill
-                  className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 640px) 50vw, 25vw"
-                />
-              </div>
-              <p className="truncate px-3 py-2 text-[13px] font-semibold text-ink-800">
-                {p.caption}
+            <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-xl bg-paper-200">
+              <Image
+                src={nationalConference.poster}
+                alt={nationalConference.title}
+                fill
+                className="object-cover object-top"
+                sizes="64px"
+              />
+            </div>
+            <div className="min-w-0 flex-1">
+              <p className="font-mono text-[11px] font-bold uppercase tracking-[0.15em] text-amber-700">
+                Happening Now &middot; {nationalConference.dates}
               </p>
-            </motion.button>
-          ))}
+              <p className="truncate text-[15px] font-semibold text-ink-950">
+                {nationalConference.title}
+              </p>
+              <p className="truncate text-[13px] text-slate-400">
+                {nationalConference.venue}
+              </p>
+            </div>
+            <span className="flex shrink-0 items-center gap-1 rounded-full bg-gradient-to-r from-green-500 to-amber-700 px-3.5 py-2 text-[12px] font-bold text-white">
+              Register <ArrowRight className="h-3 w-3" />
+            </span>
+          </motion.a>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.5 }}
+          >
+            <div className="mb-3 flex items-center justify-between">
+              <p className="font-mono text-[13px] font-bold uppercase tracking-[0.2em] text-slate-400">
+                The Family
+              </p>
+              <button
+                onClick={() => onNavigate("family")}
+                className="flex items-center gap-1 text-[13px] font-semibold text-green-700 hover:text-green-600"
+              >
+                See more <ArrowRight className="h-3.5 w-3.5" />
+              </button>
+            </div>
+            <div className="grid grid-cols-2 gap-3">
+              {familyPhotos.slice(1, 5).map((p, i) => (
+                <button
+                  key={p.src}
+                  onClick={() => onNavigate("family")}
+                  className="glass-card card-hover group overflow-hidden rounded-2xl text-left"
+                >
+                  <div className="relative aspect-square w-full overflow-hidden bg-paper-200">
+                    <Image
+                      src={p.src}
+                      alt={p.caption}
+                      fill
+                      className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 640px) 50vw, 12vw"
+                    />
+                  </div>
+                  <p className="truncate px-2.5 py-1.5 text-[12px] font-semibold text-ink-800">
+                    {p.caption}
+                  </p>
+                </button>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </div>
 

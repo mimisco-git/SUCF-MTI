@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Users2 } from "lucide-react";
+import { Users2, ArrowRight } from "lucide-react";
 import { familyPhotos } from "@/lib/data";
 
 export function Family() {
@@ -45,12 +45,29 @@ export function Family() {
                   className="object-cover object-top"
                   sizes="(max-width: 640px) 100vw, 50vw"
                 />
+                {"link" in p && p.link && (
+                  <span className="absolute left-3 top-3 rounded-full bg-gradient-to-r from-green-500 to-amber-700 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.1em] text-white shadow">
+                    Happening Now
+                  </span>
+                )}
               </div>
-              <figcaption className="p-5">
-                <p className="font-display text-[21px] text-ink-950">
-                  {p.caption}
-                </p>
-                <p className="mt-1 text-[15px] text-slate-600">{p.detail}</p>
+              <figcaption className="flex items-center justify-between gap-3 p-5">
+                <span>
+                  <p className="font-display text-[21px] text-ink-950">
+                    {p.caption}
+                  </p>
+                  <p className="mt-1 text-[15px] text-slate-600">{p.detail}</p>
+                </span>
+                {"link" in p && p.link && (
+                  <a
+                    href={p.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex shrink-0 items-center gap-1 rounded-full bg-ink-950 px-4 py-2 text-[13px] font-semibold text-white transition-colors hover:bg-ink-800"
+                  >
+                    Register <ArrowRight className="h-3.5 w-3.5" />
+                  </a>
+                )}
               </figcaption>
             </motion.figure>
           ))}

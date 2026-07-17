@@ -239,9 +239,9 @@ export function Nav({
 
       {/* utility ticker row */}
       <div className="hidden border-t border-green-900/5 bg-white/50 md:block">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 lg:px-10">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-1 lg:px-10">
           <ProgramTicker />
-          <p className="hidden shrink-0 font-mono text-[11px] uppercase tracking-[0.2em] text-slate-400 xl:block">
+          <p className="hidden shrink-0 whitespace-nowrap font-mono text-[11px] uppercase tracking-[0.2em] text-slate-400 xl:block">
             Think SUCF <span className="text-green-500">&middot; Pray SUCF &middot; Act SUCF</span>
           </p>
         </div>
