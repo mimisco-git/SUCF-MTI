@@ -1,8 +1,28 @@
 export const weeklyPrograms = [
-  { day: "Sunday Fellowship", time: "4:00 PM" },
-  { day: "Monday Prayer Night", time: "7:00 PM" },
-  { day: "Tuesday Bible Study", time: "4:00 PM" },
-  { day: "Thursday Bible Study", time: "4:00 PM" },
+  {
+    weekday: "Sunday",
+    day: "Sunday Fellowship",
+    time: "3:30 PM \u2013 5:00 PM",
+    emoji: "\u26EA",
+    description:
+      "Join the family on campus for praise, the word, and fellowship that carries into the week.",
+  },
+  {
+    weekday: "Monday",
+    day: "Monday Prayer Night",
+    time: "8:00 PM \u2013 9:00 PM",
+    emoji: "\u{1F64F}",
+    description:
+      "A set-apart hour of corporate prayer, standing in the gap for the fellowship and one another.",
+  },
+  {
+    weekday: "Thursday",
+    day: "Thursday Bible Study",
+    time: "4:30 PM \u2013 6:00 PM",
+    emoji: "\u2728",
+    description:
+      "A weekly gathering in the word, open to all students and staff on campus.",
+  },
 ];
 
 export const dailyManna = [

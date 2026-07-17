@@ -33,7 +33,7 @@ export function Theme() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.15 }}
-              className="glass-card relative rounded-2xl p-8"
+              className="glass-card card-hover relative rounded-2xl p-8"
             >
               <span className="absolute -top-5 left-7 font-display text-[65px] text-green-700/25">
                 &ldquo;

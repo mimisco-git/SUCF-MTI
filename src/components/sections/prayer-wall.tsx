@@ -141,7 +141,7 @@ export function PrayerWall() {
                   initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.96 }}
-                  className="glass-card group relative rounded-2xl p-5"
+                  className="glass-card card-hover group relative rounded-2xl p-5"
                 >
                   <button
                     onClick={() => remove(e.id)}

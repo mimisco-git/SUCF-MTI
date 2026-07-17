@@ -31,7 +31,7 @@ export function Family() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.08 }}
-              className="glass-card overflow-hidden rounded-3xl"
+              className="glass-card card-hover overflow-hidden rounded-3xl"
             >
               <div
                 className={`relative w-full overflow-hidden bg-paper-200 ${

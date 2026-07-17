@@ -72,7 +72,7 @@ export function Directory() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.5, delay: (ci % 8) * 0.04 }}
-                className={`glass-card rounded-xl p-5 ${
+                className={`glass-card card-hover rounded-xl p-5 ${
                   ci % 2 === 0 ? "sm:ml-0 sm:mr-8" : "sm:ml-8 sm:mr-0"
                 }`}
               >

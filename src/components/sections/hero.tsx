@@ -1,18 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import dynamic from "next/dynamic";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Archive, Calendar, MapPin, User, Calculator, ArrowRight } from "lucide-react";
 import { event, familyPhotos } from "@/lib/data";
 import { DailyManna } from "@/components/daily-manna";
 import { CgpaCalculator } from "@/components/cgpa-calculator";
-
-const CornerstoneScene = dynamic(
-  () => import("@/components/cornerstone-scene").then((m) => m.CornerstoneScene),
-  { ssr: false }
-);
 
 export function Hero({ onNavigate }: { onNavigate: (id: string) => void }) {
   const [calcOpen, setCalcOpen] = useState(false);
@@ -169,7 +163,8 @@ export function Hero({ onNavigate }: { onNavigate: (id: string) => void }) {
           </motion.div>
         </div>
 
-        <div className="flex flex-col items-center gap-6 lg:items-stretch">
+        <div className="relative flex flex-col items-center justify-center gap-6 lg:items-stretch">
+          <div className="pointer-events-none absolute -inset-8 -z-10 hidden rounded-[3rem] bg-gradient-to-br from-green-100 via-transparent to-amber-100/40 blur-2xl lg:block" />
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -177,9 +172,6 @@ export function Hero({ onNavigate }: { onNavigate: (id: string) => void }) {
           >
             <DailyManna />
           </motion.div>
-          <div className="relative h-[16rem] w-full lg:h-[20rem]">
-            <CornerstoneScene />
-          </div>
         </div>
       </div>
 
@@ -204,7 +196,7 @@ export function Hero({ onNavigate }: { onNavigate: (id: string) => void }) {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.8 + i * 0.06 }}
-              className="glass-card group overflow-hidden rounded-2xl text-left"
+              className="glass-card card-hover group overflow-hidden rounded-2xl text-left"
             >
               <div className="relative aspect-square w-full overflow-hidden bg-paper-200">
                 <Image

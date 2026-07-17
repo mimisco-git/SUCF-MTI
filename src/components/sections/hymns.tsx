@@ -25,7 +25,7 @@ export function Hymns() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: (i % 4) * 0.08 }}
-              className="glass-card rounded-2xl p-7"
+              className="glass-card card-hover rounded-2xl p-7"
             >
               <div className="mb-4 flex items-center gap-2 text-green-700">
                 <Music2 className="h-4 w-4" />

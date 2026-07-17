@@ -16,7 +16,7 @@ function Letter({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.7, delay: index * 0.1 }}
-      className="glass-card rounded-3xl p-8 sm:p-10"
+      className="glass-card card-hover rounded-3xl p-8 sm:p-10"
     >
       <span className="font-display text-[77px] leading-none text-green-700/30">
         {letter.paragraphs[0].charAt(0)}
